@@ -49,7 +49,7 @@ header .logo{
   width:40%
 }
 
-header .navbar ul{
+.navbar > ul{
   list-style: none;
   display: flex;
   justify-content: center;
@@ -73,18 +73,29 @@ header .navbar ul li a:hover{
   padding: .5rem 0;
 }
 
+#menu{
+  font-size: 3rem;
+  cursor: pointer;
+  color: rgb(24, 2, 63);
+  display: none;
+}
+
 @media(max-width:768px){
   #menu{
       display: block;
   }
+  .fa-times{
+    transform: rotate(180deg);
+  }
+  header .navbar.nav-toggle{
+    right: 0;
+  }
   header .navbar{
     position: fixed;
-    top: 6.5rem; right: -120%;
-    width: 75%;
+    width: 40%;
     height: 100%;
-    text-align: left;
-    align-items: flex-start;
-    background-color: #0e0f31;
+    top: 6.5rem; right: -120%;
+    background-color: #becfe6;
   }
   header .navbar ul{
     flex-flow: column;
@@ -92,30 +103,21 @@ header .navbar ul li a:hover{
   }
   header .navbar ul li{
     text-align: center;
-    width: 100%;
+    width: 40%;
     margin: 1rem 0;
-    border-radius: .5rem;
     width: 26rem;
   }
   header .navbar ul li a{
     display: block;
-    padding: 1rem;
-    text-align: left;
-    color: #fff;
+    text-align: center;
+    color: #002057;
     font-size: 2rem;
+    padding: 1rem;
   }
   header .navbar ul li a.active,
   header .navbar ul li a:hover{
     padding: 1rem;
-    color: #fff;
-    border-radius: .5rem;
-    border-bottom: .5rem solid #011aff;
-  }
-  .fa-times{
-    transform: rotate(180deg);
-  }
-  header .navbar.nav-toggle{
-    right: 0;
+    color: rgb(25, 101, 151);
   }
 }
 
@@ -240,7 +242,7 @@ header .navbar ul li a:hover{
   background-color:#73a5f0
 }
 
-@media(max-width:450px){
+@media screen and (max-width:600px){
   .home .btn{
     margin: 4rem 0;
   }
@@ -579,6 +581,11 @@ header .navbar ul li a:hover{
   position: relative;
   overflow:hidden;
   height:30rem;
+}
+
+.work .box-container .box:hover{
+  transform: scale(1.05);
+  box-shadow: 1rem .5rem 1.2rem rgba(0, 0, 0, .3);
 }
 .work .box-container .box img{
   height: 100%;
